@@ -1,4 +1,5 @@
 from app.services.feature_engineering_service import FeatureEngineeringService
+from fastapi import APIRouter
 
 router = APIRouter()
 
