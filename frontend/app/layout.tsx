@@ -6,8 +6,8 @@ import Sidebar from "@/components/Sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Quantora | AI Quant Finance",
-  description: "Multi-Agent Quantitative Finance Platform",
+  title: "Quantora | The Honest Quant Copilot",
+  description: "An AI quant copilot that proves whether a strategy actually works — then watches it decay live.",
 };
 
 export default function RootLayout({
@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-950 text-slate-100`}>
+      <body className={`${inter.className} text-slate-100`}>
         <div className="flex min-h-screen">
           <Sidebar />
-          <main className="flex-1 ml-64 p-8">
+          <main className="flex-1 ml-64 p-8 max-w-[1400px]">
             {children}
           </main>
         </div>
