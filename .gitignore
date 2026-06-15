@@ -18,3 +18,10 @@ dist/
 # IDEs
 .vscode/
 .idea/
+
+# Local databases
+*.db
+*.sqlite3
+
+# Build info
+tsconfig.tsbuildinfo

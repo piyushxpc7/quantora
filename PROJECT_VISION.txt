@@ -1,0 +1,48 @@
+QUANTORA — Original Project Vision
+=====================================
+
+Tagline: "Bloomberg + QuantConnect + RiskMetrics + AutoGPT for quantitative finance."
+
+Quantora was planned as a modular, multi-agent SaaS platform to solve three core pain points
+in the quantitative finance industry:
+
+1. SLOW STRATEGY DISCOVERY
+   Automate trading strategy research using multi-agent LLMs instead of manual quant work.
+
+2. REACTIVE RISK MANAGEMENT
+   Proactively detect model drift and market regime shifts in real time using AI,
+   rather than discovering problems after losses occur.
+
+3. FRAGMENTED TOOLING
+   Replace the patchwork of Bloomberg, QuantConnect, RiskMetrics, and custom scripts
+   with a single unified platform covering data, backtesting, risk, and execution.
+
+---
+
+PLANNED MODULES
+---------------
+- Market Data Ingestion       : Live feeds (Alpaca, Zerodha), historical OHLCV, macro (FRED), on-chain data
+- QuantoraDrift               : Real-time drift detection via PSI, KS Test, Transformers, Autoencoders
+- Multi-Agent Quant AI        : Strategy Research → Backtesting → Risk → Portfolio Optimization pipeline
+- Execution Engine            : Paper trading + live execution with risk-based trade blocking
+- ML Modeling                 : LSTM, GRU, Temporal Fusion Transformers, Neural SDEs
+- Portfolio Optimization      : Mean-Variance, HRP (Hierarchical Risk Parity), Black-Litterman, Kelly Criterion
+- Risk & Stress Testing       : VaR, CVaR, Monte Carlo simulations, liquidity risk
+- Automated Reporting         : PDF generation, daily risk summaries
+- Frontend Dashboard          : Next.js UI for market overview, backtesting results, drift monitoring, agent chat
+
+---
+
+TARGET USERS
+------------
+Quantitative analysts, portfolio managers, and algorithmic traders who need an
+all-in-one research, risk, and execution environment.
+
+---
+
+TECH STACK ORIGINALLY PLANNED
+------------------------------
+Backend  : FastAPI, TimescaleDB/PostgreSQL, WebSockets
+ML/AI    : PyTorch, scikit-learn, LLM APIs (OpenAI/Anthropic)
+Frontend : Next.js, React, Tailwind CSS, Recharts
+Infra    : Docker, potential cloud deployment

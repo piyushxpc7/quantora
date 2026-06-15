@@ -1,6 +1,22 @@
 version: '3.8'
 
 services:
+  db:
+    image: timescale/timescaledb:latest-pg15
+    environment:
+      POSTGRES_USER: quantora
+      POSTGRES_PASSWORD: quantora
+      POSTGRES_DB: quantora
+    ports:
+      - "5432:5432"
+    volumes:
+      - timescale_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quantora"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
   backend:
     build: ./backend
     ports:
@@ -9,6 +25,13 @@ services:
       - ./backend:/app
     environment:
       - PROJECT_NAME=Quantora
+      - DATABASE_URL=postgresql+asyncpg://quantora:quantora@db:5432/quantora
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o}
+      - RISK_CVAR_LIMIT=${RISK_CVAR_LIMIT:-0.05}
+    depends_on:
+      db:
+        condition: service_healthy
     restart: always
 
   frontend:
@@ -20,3 +43,6 @@ services:
     depends_on:
       - backend
     restart: always
+
+volumes:
+  timescale_data:
